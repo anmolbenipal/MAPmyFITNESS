@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;900&family=Ubuntu&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<style>
+    body{
+        background-color: black;
+        color: white;
+        text-align: center;
+    }
+    .calculation{
+        padding-bottom: 0;
+        padding-top: 30px;
+    }
+    .calculation_container{
+        row-gap: 4rem;
+    }
+    .calculation_content .section_title{
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    .calculation_description{
+        text-align: center;
+        margin-top: 2rem;
+        margin-bottom: 2.5rem;
+        font-size: 20px;
+    }
+    .calculation_form{
+        display: grid;
+        row-gap: 1rem;
+    }
+    .calculation_box{
+        position: relative;
+        border:1px solid darkgray;
+        width: 400px;
+    }
+    .calculation_input{
+        width: 100%;
+        background: transparent;
+        padding: 20px 56px 20px 24px;
+        outline:none;
+        border: none;
+        color: green;
+    }
+    .calculation_label{
+        position: absolute;
+        right:1.5rem;
+        top:1.25 rem;
+        color: lavenderblush;
+    }
+    .calculation_form.button{
+        margin-top: 1.5 rem;
+    }
+    .calculation_message{
+        transform:translateY(1 rem);
+        font-size: 18px;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .color-green{
+        color:green;
+    }
+     .color-red{
+        color:red;
+    }
+    .btn {
+    padding: 10px 20px;
+    width: 200px;
+  }
+ 
+</style>
+
+<body>
+    <div class="heading">
+        <section id="title">
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-lg navbar-dark">
+                    <a class="navbar-brand" href="">MAPmyFITNESS</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="register.html">Dashboard</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="plans.html">Pre-designed Plans </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="nutrition.html">Nutrition Tracking </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="challenges.html">Challenges </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contact.html">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </section>
+    <section class="calulation">
+        <div class="calculation_container container grid">
+            <div class="calulation_content">
+                <div class="section_titles">
+                    <h1 class="section_title-border" style="font-weight: 800;">CALCULATE</h1>
+                    <h1 class="section_title">BMI</h1>
+                </div>
+                <p class="calculation_description">
+                    The Body Mass Index (BMI) calculator calculates body mass index from your weight and height.
+                </p>
+                <form action="" class="calculation_form" id="calculation_form" style="justify-content: center;">
+                    <div class="calculation_box">
+                        <input type="number" placeholder="Height" class="calculation_input" id="calculation_cm">
+                        <label for="" class="calculation_label">cm</label>
+                    </div>
+                    <div class="calculation_box">
+                        <input type="number" placeholder="Weight" class="calculation_input" id="calculation_kg">
+                        <label for="" class="calculation_label">kg</label>
+                    </div>
+                    <button class="btn btn-outline-light btn-lg" type="submit">
+                        Calculate Now <i class="ri-arrow-right-line"></i>
+                    </button>
+                </form>
+
+                <p class="calculation_message" id="calculation_message"></p>
+            </div>
+           </div>
+
+
+    </section>
+    <script>
+        alert("Find your BMI firstly.");
+        const calculationForm = document.getElementById('calculation_form'),
+              calculationCm = document.getElementById('calculation_cm'),
+              calculationKg = document.getElementById('calculation_kg'),
+              calculationMessage = document.getElementById('calculation_message');
+        const calculateBMI = (e) =>{
+            e.preventDefault()
+            if(calculationCm.value===''|| calculationKg.value===''){
+                calculationMessage.classList.remove('color-green')
+                calculationMessage.classList.add('color-red')
+                calculationMessage.textContent ="Fill in the Height and Weight 😓"
+                setTimeout(()=>{
+                    calculationMessage.textContent=''
+                },3000)
+            }
+            else{
+                const cm = calculationCm.value/100,
+                      kg = calculationKg.value,
+                      bmi=Math.round(kg/(cm*cm));
+
+            
+            if(bmi<18.5){
+                calculationMessage.classList.add('color-green')
+                calculationMessage.textContent = `Your BMI is ${bmi} and you are skinny 😔`;
+            }
+            else if(bmi<25){
+                calculationMessage.classList.add('color-green')
+                calculationMessage.textContent = `Your BMI is ${bmi} and you are healthy 😁`;
+            }
+            else {
+                calculationMessage.classList.add('color-green')
+                calculationMessage.textContent = `Your BMI is ${bmi} and you are overweight 😖`;
+
+            }
+            calculationCm.value='';
+            calculationKg.value='';
+            setTimeout(()=>{
+                calculationMessage.textContent=''},4000);
+            }
+        }
+        calculationForm.addEventListener('submit',calculateBMI);
+
+    </script>
+
+</body>
+
+</html>

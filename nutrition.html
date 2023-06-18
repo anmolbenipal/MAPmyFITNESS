@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;900&family=Ubuntu&display=swap"
+        rel="stylesheet">
+</head>
+<style>
+    .title-content {
+        text-align: right;
+    }
+
+    .title-content h1 {
+        font-size: 60px;
+        margin-top: 100px;
+        margin-bottom: 40px;
+        margin-left: 800px;
+        margin-right: 20px;
+    }
+
+    .title-content p {
+        font-size: 25px;
+        margin-bottom: 30px;
+        font-weight: 500;
+        margin-left: 800px;
+        margin-right: 20px;
+    }
+
+    .title {
+        background-image: url(images/003.jpg);
+        height: 600px;
+        display: flex;
+        align-items: right;
+        justify-content: right;
+        background-size: cover;
+        font-family: 'Montserrat', sans-serif;
+
+    }
+
+    .feature:hover {
+        transition: 0.2s ease-in-out;
+        box-shadow: 5px 5px 5px rgba(1, 1, 1, 0.05);
+    }
+
+    .features {
+        margin-top: 100px;
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        margin-bottom: 50px;
+
+    }
+
+    .feature {
+        display: flex;
+        gap: 20px;
+        padding: 20px;
+        transition: 0.2s ease-in-out;
+    }
+
+    .feature img {
+        border-radius: 50%;
+    }
+
+    .tools {
+        font-size: 50px;
+        font-family: 'Ubuntu', sans-serif;
+        text-align: center;
+    }
+
+    .weight {
+        font-size: 25px;
+        margin-bottom: 8px;
+        font-family: 'Ubuntu', sans-serif;
+        text-align: center;
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+
+    .happy .feature_content h3 {
+        font-size: 20px;
+        font-family: 'Ubuntu', sans-serif;
+        color: darkblue;
+    }
+
+    .happy .feature_content p {
+        font-size: 15px;
+        font-family: 'Ubuntu', sans-serif;
+    }
+
+    .diet {
+        background-color: whitesmoke;
+        font-family: 'Montserrat', sans-serif;
+        ;
+    }
+    .btn {
+    padding: 10px 20px;
+    background-color:white;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  a:hover{
+    border: 2px solid black;
+  }
+</style>
+
+<body>
+
+    <section class="title">
+        <div class="title-content">
+            <h1>Develop healthy habits</h1>
+            <p>Count your calories, ensure you're meeting nutrient targets, and see your progress over time.</p>
+            <a href="calTrac.html" class="btn btn-outline-light btn-lg" target="_blank">Start</a>
+        </div>
+    </section>
+    <section class="happy">
+        <h3 class="tools">The Tools For your Goals</h3>
+        <p class="weight">Trying to lose weight, tone up, lower your BMI, or invest in your overall health? We give you
+            the right features to get there.</p>
+        <section class="features">
+            <div class="feature">
+                <img src="images/running.gif" alt="Feature 1" width="100px">
+                <div class="feature_content">
+                    <h3>Learn. Track. Improve</h3>
+                    <p>Keeping a food diary helps you understand your habits and increases your likelihood of hitting
+                        your goals.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <img src="images/fist.png" alt="Feature 2" width="100px">
+                <div class="feature_content">
+                    <h3>Stay Motivated.</h3>
+                    <p>Join the World’s Largest Fitness Community for advice, tips, and support 24/7.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <img src="images/barcode.gif" alt="Feature 3" width="100px">
+                <div class="feature_content">
+                    <h3>Logging Simplified.</h3>
+                    <p>Scan barcodes, save meals and recipes, and use Quick Tools for fast and easy food tracking.</p>
+                </div>
+            </div>
+        </section>
+    </section>
+    <section class="diet">
+        <section class="features">
+            <div class="feature">
+                <img src="images/healthy-food.gif" alt="Feature 1" width="100px">
+                <div class="feature_content">
+                    <h3>Track up to 84 nutrients and other compounds</h3>
+                    <p>Log your meals and track all your macro and micronutrients.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <img src="images/selfie.gif" alt="Feature 2" width="100px">
+                <div class="feature_content">
+                    <h3>Log meals, exercise and health metrics</h3>
+                    <p>Plus, you can create custom foods, recipes, exercises and metrics.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <img src="images/line-chart.gif" alt="Feature 3" width="100px">
+                <div class="feature_content">
+                    <h3>Get valuable health reports and charts</h3>
+                    <p>Learn how nutrients and metrics correlate over time.</p>
+                </div>
+            </div>
+        </section>
+        <section class="features">
+
+            <div class="feature">
+                <img src="images/salad.gif" alt="Feature 1" width="100px">
+                <div class="feature_content">
+                    <h3>Custom diet settings</h3>
+                    <p>Set weight, macro and nutrient targets to meet your goals.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <img src="images/stopwatch.gif" alt="Feature 2" width="100px">
+                <div class="feature_content">
+                    <h3>Fasting timer</h3>
+                    <p>Track your intermittent fasts and see their effect over time.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <img src="images/vegan.gif" alt="Feature 3" width="100px">
+                <div class="feature_content">
+                    <h3>Diet support</h3>
+                    <p>Whether you’re Keto, Vegan, or on one recommended by your doctor.</p>
+                </div>
+            </div>
+        </section>
+    </section>
+</body>
+
+</html>
